@@ -16,6 +16,7 @@ public class Program extends javax.swing.JFrame {
     public Program() {
         initComponents();
         setTitle("Morse translator made by NguyenMinh1301");
+        txtInput.setText("Hello World!");
 
         //Upper case
         morseMap.put("A", ".-");
@@ -238,6 +239,11 @@ public class Program extends javax.swing.JFrame {
         btnTranslate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         txtInput.setColumns(20);
         txtInput.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -386,6 +392,10 @@ public class Program extends javax.swing.JFrame {
     private void btnClearOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearOutputActionPerformed
         clearOutput();
     }//GEN-LAST:event_btnClearOutputActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        translate();
+    }//GEN-LAST:event_formWindowActivated
 
     public static void main(String args[]) {
 
